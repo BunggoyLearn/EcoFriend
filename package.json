@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/BunggoyLearn/EcoFriend/issues"
   },
-  "homepage": "https://github.com/BunggoyLearn/EcoFriend#readme"
+  "homepage": "https://github.com/BunggoyLearn/EcoFriend#readme",
+  "dependencies": {
+    "dotenv": "^17.2.0"
+  }
 }

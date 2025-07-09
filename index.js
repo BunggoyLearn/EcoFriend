@@ -1,5 +1,6 @@
-import OpenAI from "openai"
+import OpenAI from 'openai'
 const client = new OpenAI();
+import 'dotenv/config';
 
 const response = await client.response.create({
     model: "gpt-4.1",
