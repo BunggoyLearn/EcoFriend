@@ -1,0 +1,19 @@
+{
+  "name": "ecofriend",
+  "version": "1.0.0",
+  "description": "A household tool to help you protect the environment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BunggoyLearn/EcoFriend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BunggoyLearn/EcoFriend/issues"
+  },
+  "homepage": "https://github.com/BunggoyLearn/EcoFriend#readme"
+}
