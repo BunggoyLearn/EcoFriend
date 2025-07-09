@@ -1,8 +1,10 @@
 import OpenAI from 'openai'
-const client = new OpenAI();
+const client = new OpenAI({
+    apiKey: process.env['API_KEY'],
+});
 import 'dotenv/config';
 
-const response = await client.response.create({
+const response = await client.responses.create({
     model: "gpt-4.1",
     input: "Write a one sentence bedtime story about a unicorn"
 });
