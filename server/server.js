@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import { getSustainabilityResponse } from './index.js';
 
 const app = express();
 const PORT = 3000;
@@ -12,18 +13,11 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(cors(corsOptions));
 
-app.get('/', (req, res) => {
-    res.send('Hello World')
-});
+app.post('/api/prompt', async (req, res) => {
+    const { prompt } = req.body;
 
-app.get('/api', (req, res) => {
-    res.json({ fruits: ["apple", "orange", "banana"] });
-});
-
-app.post('/gpt', async (req, res) => {
-    let prompt = req.body.prompt;
-    let response = await textPrompt(prompt);
-    res.send(response);
+    const answer = await getSustainabilityResponse(prompt);
+    res.json({ answer });
 });
 
 app.listen(PORT, () => {
