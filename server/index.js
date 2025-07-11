@@ -20,7 +20,7 @@ export async function getSustainabilityResponse(prompt) {
     }
 }
 
-export async function getImageURLSustainabilityResponse(imageURL) {
+export async function getImageURLSustainabilityResponse(imageurl) {
     try {
         const imageResponse = await client.responses.create({
             model: "gpt-4.1-mini",
@@ -30,7 +30,7 @@ export async function getImageURLSustainabilityResponse(imageURL) {
                     { type: "input_text", text: "Declare what is in the image. Use environmentally sustainable practices to suggest a change to the habits in this image." },
                     {
                         type: "input_image",
-                        image_url: imageURL,
+                        image_url: imageurl
                     },
                 ],
             }],

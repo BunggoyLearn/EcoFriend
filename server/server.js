@@ -21,9 +21,9 @@ app.post('/api/prompt', async (req, res) => {
 });
 
 app.post('/api/imageURL', async (req, res) => {
-    const { imageURL } = req.body;
+    const imageurl = req.body.url;
 
-    const answer = await getImageURLSustainabilityResponse(imageURL);
+    const answer = await getImageURLSustainabilityResponse(imageurl);
     res.json({ answer });
 });
 
