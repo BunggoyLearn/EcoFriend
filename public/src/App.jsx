@@ -1,12 +1,32 @@
-import { useState } from 'react'
-import './App.css'
-import Input from './components/input'
+import { useEffect } from 'react'
+import './App.css';
+import Input from './components/input';
+import axios from 'axios';
 
 function App() {
-  //const [count, setCount] = useState(0)
+
+  const fetchAPI = async () => {
+    const response = await axios.get("http://localhost:3000/api");
+    return(response.data.fruits);
+  };
+
+  let data = fetchAPI();
+
+  console.log(data);
+
+  useEffect( () => {
+    fetchAPI();
+  }, [])
 
   return (
-      <Input/>
+    <div>
+      {(typeof data === 'undefined') ? (
+        <p> Loading... </p>
+      ): (
+        <Input/>
+      )}
+
+    </div>
   )
 }
 
